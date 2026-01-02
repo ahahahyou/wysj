@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>介绍页</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        figure {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 返回上一级按钮样式（修改为文字+背景全透明，其他属性不变） */
+        .back-button {
+            position: absolute;
+            text-decoration: none;
+            background-color: transparent; /* 按钮背景透明 */
+            color: transparent; /* 按钮文字透明 */
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            /* 原始位置配置，保持不变 */
+            top: 4%; 
+            left: 11%;
+            /* 原始尺寸配置，保持视觉一致 */
+            width: 4%;
+            height: 3%;
+            line-height: 2.2vw;
+            font-size: 1vw;
+        }
+
+        /* 悬停效果保留过渡，同时保持全透明（无视觉变化，仅保留过渡属性） */
+        .back-button:hover {
+            background-color: transparent; /* 悬停后仍保持背景透明 */
+            color: transparent; /* 悬停后仍保持文字透明 */
+            transition: background-color 0.3s; /* 保留原始过渡效果 */
+        }
+    </style>
+</head>
+<body>
+    <figure>
+        <img src="img/介绍页.png" alt="介绍页">
+        <!-- 动态设置返回路径，样式已改为全透明 -->
+        <a id="backBtn" class="back-button">返回</a>
+    </figure>
+
+    <script>
+        // 获取返回按钮
+        const backBtn = document.getElementById('backBtn');
+        // 获取上一页来源URL
+        const referrer = document.referrer;
+        // 获取当前页面路径信息，兼容文件夹层级
+        const currentOrigin = window.location.origin;
+        const currentPathname = window.location.pathname;
+        const currentDir = currentPathname.substring(0, currentPathname.lastIndexOf('/') + 1);
+
+        // 定义首页和百科图鉴的路径（可根据你的实际文件名修改）
+        const homePage = currentOrigin + currentDir + 'index.html'; // 首页路径
+        const encyclopediaPage = currentOrigin + currentDir + 'bktj.html'; // 百科图鉴路径
+
+        // 自动判断来源并设置返回路径
+        if (referrer.includes('index.html') || referrer === homePage) {
+            // 来源是首页，返回index.html
+            backBtn.href = 'index.html';
+        } else if (referrer.includes('bktj.html') || referrer === encyclopediaPage) {
+            // 来源是百科图鉴，返回百科图鉴
+            backBtn.href = 'bktj.html';
+        } else {
+            // 默认返回首页（防止无来源的情况）
+            backBtn.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

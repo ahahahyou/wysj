@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>互动社区</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        figure {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 导航按钮的通用样式（修改为文字+背景全透明，其他属性不变） */
+        .nav-link {
+            position: absolute;
+            text-decoration: none;
+            background-color: transparent; /* 按钮背景透明 */
+            color: transparent; /* 按钮文字透明 */
+            cursor: pointer;
+            width: 5%;
+            height: 2.2%;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 2.2vw;
+            font-size: 1vw;
+            font-weight: bold;
+        }
+
+        /* 调整“首页”按钮的位置（和原代码一致） */
+        #btn-home {
+            top: 7%; left: 33%;
+        }
+
+        /* 调整“百科图鉴”按钮的位置（和原代码一致） */
+        #btn-encyclopedia {
+            top: 7%; left: 39%;
+        }
+
+        /* 调整“互动社区”按钮的位置（和原代码一致，同时改为全透明，移除高亮背景色） */
+        #btn-community {
+            top: 7%; left: 46.1%;
+            background-color: transparent; /* 取消高亮，改为背景透明 */
+            color: transparent; /* 文字透明 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <figure>
+        <!-- 替换为互动社区的图片，注意图片路径和首页保持一致 -->
+        <img src="img/互动社区.png" alt="互动社区">
+
+        <!-- 三个导航按钮（跳转路径不变，样式已改为全透明） -->
+        <a href="index.html" id="btn-home" class="nav-link">首页</a>
+        <a href="bktj.html" id="btn-encyclopedia" class="nav-link">百科图鉴</a>
+        <a href="hdsq.html" id="btn-community" class="nav-link">互动社区</a>
+
+    </figure>
+
+</body>
+</html>

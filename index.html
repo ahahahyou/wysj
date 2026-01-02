@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        body { margin: 0; padding: 0; }
+        figure {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 导航按钮的通用样式 - 文字+背景全透明 */
+        .nav-link {
+            position: absolute;
+            text-decoration: none;
+            background-color: transparent; /* 按钮背景透明 */
+            color: transparent; /* 文字透明 */
+            cursor: pointer;
+            width: 5%;
+            height: 2.2%;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 2.2vw;
+            font-size: 1vw;
+            font-weight: bold;
+        }
+
+        /* 调整“首页”按钮的位置 */
+        #btn-home {
+            top: 4.9%; left: 33%;
+        }
+
+        /* 调整“百科图鉴”按钮的位置 */
+        #btn-encyclopedia {
+            top: 4.9%; left: 40%;
+        }
+
+        /* 调整“互动社区”按钮的位置 */
+        #btn-community {
+            top: 4.9%; left: 47.5%;
+        }
+
+        /* “蓝裙美凤蝶”卡片按钮 - 文字+背景全透明 */
+        .card-link {
+            position: absolute;
+            text-decoration: none;
+            background-color: transparent; /* 按钮背景透明 */
+            color: transparent; /* 文字透明 */
+            cursor: pointer;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+            top: 76.4%; left: 38%; width: 10%; height: 15%; line-height: 8vw; font-size: 1.2vw;
+        }
+
+        /* --- “开始探索”按钮的样式 - 文字+背景全透明 --- */
+        .explore-button {
+            position: absolute;
+            text-decoration: none;
+            background-color: transparent; /* 按钮背景透明（移除原有绿色） */
+            color: transparent; /* 文字透明 */
+            cursor: pointer;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5vw; /* 字体大小不变 */
+            line-height: 4vw; /* 垂直居中不变 */
+            transition: background-color 0.3s; /* 悬停过渡效果保留（可按需删除） */
+            top: 39%; left: 16%; width: 12%; height: 4%;
+        }
+        /* 鼠标悬停时仅保留背景色变化（若不需要可删除该段） */
+        .explore-button:hover {
+            background-color: transparent; /* 悬停后仍保持透明，也可自定义其他颜色 */
+        }
+        /* ------------------------------------ */
+
+    </style>
+</head>
+<body>
+
+    <figure>
+        <img src="img/首页.png" alt="首页">
+
+        <!-- 三个独立定位的导航按钮 -->
+        <a href="index.html" id="btn-home" class="nav-link">首页</a>
+        <a href="bktj.html" id="btn-encyclopedia" class="nav-link">百科图鉴</a>
+        <a href="hd.html" id="btn-community" class="nav-link">互动社区</a>
+
+        <!-- “蓝裙美凤蝶”卡片按钮 -->
+        <a href="jsy.html" class="card-link">蓝裙美凤蝶</a>
+
+        <!-- 新增：“开始探索”按钮 -->
+        <a href="bktj.html" id="btn-explore" class="explore-button">开始探索</a>
+
+    </figure>
+
+</body>
+</html>
